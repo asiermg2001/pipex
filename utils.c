@@ -52,7 +52,7 @@ char	*findpath(char *cmd)
 	i = 0;
 	path = ft_split(getenv("PATH"), ':');
 	newcmd = ft_split(cmd, ' ');
-	while (path[++i])
+	while (path[i])
 	{
 		partpath = ft_strjoin(path[i], "/");
 		execute = ft_strjoin(partpath, newcmd[0]);
