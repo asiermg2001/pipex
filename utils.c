@@ -49,7 +49,7 @@ char	*findpath(char *cmd)
 	char	*partpath;
 	char	**newcmd;
 
-	i = -1;
+	i = 0;
 	path = ft_split(getenv("PATH"), ':');
 	newcmd = ft_split(cmd, ' ');
 	while (path[++i])
@@ -63,6 +63,7 @@ char	*findpath(char *cmd)
 			return (execute);
 		}
 		free(execute);
+		i++;
 	}
 	freefiles(path);
 	freefiles(newcmd);
